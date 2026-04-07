@@ -12,7 +12,7 @@ const navItems = [
 
 const Navbar = () => {
     return (
-        <header className="sticky top-0 z-50 backdrop-blur-md container mx-auto">
+        <header className="sticky top-0 z-50 bg-white container mx-auto ">
     <div className="container flex h-16 items-center justify-between">
       <Link to="/" className="flex items-center gap-2 text-xl font-bold">
         <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-r from-[#1a2980] to-[#26d0ce]">

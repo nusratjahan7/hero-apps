@@ -2,4 +2,9 @@
 @plugin "daisyui";
 
 
-
+.light{
+    background: #26d0ce;
+}
+.blue{
+    background: #1a2980;
+}
