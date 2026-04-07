@@ -1,19 +1,19 @@
-import messengerImg from "../../assets/apps-img/messenger.png";
-import fitnessImg from "../../assets/apps-img/fitness.png";
-import musicImg from "../../assets/apps-img/music.png";
-import photoImg from "../../assets/apps-img/photo.png";
-import weatherImg from "../../assets/apps-img/weather.png";
-import foodImg from "../../assets/apps-img/food.png";
-import financeImg from "../../assets/apps-img/finance.png";
-import travelImg from "../../assets/apps-img/travel.png";
-import gamingImg from "../../assets/apps-img/gaming.png";
-import notesImg from "../../assets/apps-img/notes.png";
-import videoImg from "../../assets/apps-img/video.png";
-import shoppingImg from "../../assets/apps-img/shopping.png";
-import mapsImg from "../../assets/apps-img/maps.png";
-import cloudImg from "../../assets/apps-img/cloud.png";
-import calendarImg from "../../assets/apps-img/calendar.png";
-import educationImg from "../../assets/apps-img/education.png";
+import messengerImg from "../assets/apps-img/messenger.png";
+import fitnessImg from "../assets/apps-img/fitness.png";
+import musicImg from "../assets/apps-img/music.png";
+import photoImg from "../assets/apps-img/photo.png";
+import weatherImg from "../assets/apps-img/weather.png";
+import foodImg from "../assets/apps-img/food.png";
+import financeImg from "../assets/apps-img/finance.png";
+import travelImg from "../assets/apps-img/travel.png";
+import gamingImg from "../assets/apps-img/gaming.png";
+import notesImg from "../assets/apps-img/notes.png";
+import videoImg from "../assets/apps-img/video.png";
+import shoppingImg from "../assets/apps-img/shopping.png";
+import mapsImg from "../assets/apps-img/maps.png";
+import cloudImg from "../assets/apps-img/cloud.png";
+import calendarImg from "../assets/apps-img/calendar.png";
+import educationImg from "../assets/apps-img/education.png";
 
 
 export const appsData = [

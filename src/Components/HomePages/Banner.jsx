@@ -8,9 +8,9 @@ const Banner = () => {
         initial={{opacity: 0, y: -10}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.8}}
-        className='min-h-[90vh] container mx-auto pt-6 space-y-4'>
+        className='min-h-[90vh] container mx-auto pt-6 space-y-3'>
             <div className='text-center space-y-4 '>
-                <h1 className='font-bold text-4xl lg:text-5xl'>We Build <br /> <span className='text-[#1a2980]'>Productive</span> Apps</h1>
+                <h1 className='font-bold text-3xl lg:text-4xl'>We Build <br /> <span className='text-[#1a2980]'>Productive</span> Apps</h1>
                 <p className='text-gray-500 w-2/3 text-center mx-auto'>At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
             </div>
             <div className='flex items-center justify-center gap-4'>
