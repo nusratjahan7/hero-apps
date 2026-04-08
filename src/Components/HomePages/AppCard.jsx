@@ -3,23 +3,15 @@ import { appsData } from "../../AppsData/AppsData";
 import { Download } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 
-const topApps = [...appsData].sort((a, b) => b.downloads - a.downloads).slice(0, 8);
 
-const TrendingApps = () => {
+const AppCard = () => {
     return (
-        <section className='bg-gray-100 px-3'>
-        <div className='container mx-auto py-9'>
-            {/* section header  */}
-            <div className='text-center py-9 space-y-3'>
-                <h2 className='text-3xl font-bold'>Trending Apps</h2>
-                <p className='text-sm text-gray-600'>Explore All Trending Apps on the Market developed by us</p>
-            </div>
-            {/* top apps */}
-            <div className='grid grid-cols-2 sm:grid-cols-3 gap-4 md:grid-cols-4'>
-                {
-                    topApps.map((app, ind) => <div 
-                    className="group flex flex-col items-center rounded-xl border border-gray-200 bg-white p-5 transition-all hover:shadow-sm hover:-translate-y-1"
-                    key={ind}>
+        <div>
+            {
+                appsData.map((app, index) => (
+                    <div  key={index}
+                     className="group flex flex-col items-center rounded-xl border border-gray-200 bg-white p-5 transition-all hover:shadow-sm hover:-translate-y-1"
+                    >
                         <img
                             src={app.image}
                             alt={app.title}
@@ -41,12 +33,11 @@ const TrendingApps = () => {
         
                  </span>
                  </div>
-                    </div>)
-                }
-            </div>
+                    </div>
+                ))
+            }
         </div>
-        </section>
     );
 };
 
-export default TrendingApps;
+export default AppCard;
