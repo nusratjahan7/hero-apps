@@ -20,7 +20,6 @@ const AppDetail = () => {
     const {installed, setInstalled} = useContext(InstalledAppsContext);
     // console.log(installed);
 
-
     if(loading){
         return  <div className="col-span-full flex justify-center items-center py-10">
                 <HashLoader color="#1a2980" />
@@ -30,6 +29,8 @@ const AppDetail = () => {
     if (!expectedApp) {
         return <AppNotFound />
     }
+
+    const isInstalled = installed.some(app => app.id === expectedApp.id);
 
     const handleInstall = () => {
         setInstalled([...installed, expectedApp]);
@@ -67,8 +68,19 @@ const AppDetail = () => {
                 </span>
                 <span className='text-gray-500'>{expectedApp.size} MB</span>
             </div>
-            <button className='btn mt-4 bg-linear-to-r from-[#1a2980] to-[#26d0ce] text-white' onClick={handleInstall}>
-                Install
+            
+            <button 
+            
+            className={`btn mt-4 bg-linear-to-r from-[#1a2980] to-[#26d0ce] text-white ${
+            isInstalled ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+
+            onClick={() => {
+            if (!isInstalled) handleInstall();
+           }}
+            disabled={isInstalled}>
+
+                {isInstalled ? 'Installed' : 'Install'}
             </button>
           </div>
            </div>

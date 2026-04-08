@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { InstalledAppsContext } from '../../Context/InstalledApps';
 import { Trash2, Package } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 const Installation = () => {
 
@@ -9,6 +10,7 @@ const Installation = () => {
     const handleUninstall = (app) => {
         const restApps = installed.filter(i => i.id !== app.id);
         setInstalled(restApps);
+        toast.error(`${app.title} is uninstalled`);
     };
 
     return (
