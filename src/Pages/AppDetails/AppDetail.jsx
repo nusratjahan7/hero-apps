@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router';
 import UseApps from '../../Hooks/UseApps';
 import { ArrowLeft, Download, MessageSquare } from 'lucide-react';
 import { FaStar } from 'react-icons/fa';
 import { HashLoader } from 'react-spinners';
 import AppNotFound from '../../Components/AppNotFound/AppNotFound';
+import { InstalledAppsContext } from '../../Context/InstalledApps';
+import { toast } from 'react-toastify';
 
 
 const AppDetail = () => {
@@ -13,7 +15,11 @@ const AppDetail = () => {
     const { apps, loading } = UseApps();
     // console.log(apps, loading);
     const expectedApp = apps.find((app) => app.id == id);
-    console.log(expectedApp);
+    // console.log(expectedApp);
+
+    const {installed, setInstalled} = useContext(InstalledAppsContext);
+    // console.log(installed);
+
 
     if(loading){
         return  <div className="col-span-full flex justify-center items-center py-10">
@@ -25,6 +31,10 @@ const AppDetail = () => {
         return <AppNotFound />
     }
 
+    const handleInstall = () => {
+        setInstalled([...installed, expectedApp]);
+        toast.success(`${expectedApp.title} is installed`);
+    }   
 
     return (
         <section className='container mx-auto px-3'>
@@ -57,7 +67,7 @@ const AppDetail = () => {
                 </span>
                 <span className='text-gray-500'>{expectedApp.size} MB</span>
             </div>
-            <button className='btn mt-4 bg-linear-to-r from-[#1a2980] to-[#26d0ce] text-white'>
+            <button className='btn mt-4 bg-linear-to-r from-[#1a2980] to-[#26d0ce] text-white' onClick={handleInstall}>
                 Install
             </button>
           </div>
