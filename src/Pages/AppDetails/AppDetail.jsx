@@ -7,6 +7,7 @@ import { HashLoader } from 'react-spinners';
 import AppNotFound from '../../Components/AppNotFound/AppNotFound';
 import { InstalledAppsContext } from '../../Context/InstalledApps';
 import { toast } from 'react-toastify';
+import Charts from '../../Components/Charts/Charts';
 
 
 const AppDetail = () => {
@@ -84,6 +85,17 @@ const AppDetail = () => {
             </button>
           </div>
            </div>
+
+           <div className='mb-7 p-4 bg-gray-50 rounded-2xl'>
+            <h4 className='mb-9 text-2xl font-bold'>App Reviews</h4>
+            <Charts ratings={expectedApp.ratings} />
+           </div>
+
+           {/* Description */}
+         <div className="rounded-xl border border-gray-200 mb-8  p-6 shadow-sm">
+            <h2 className="mb-3 text-xl font-bold text-foreground">Description</h2>
+            <p className="leading-relaxed text-gray-500">{expectedApp.description}</p>
+        </div>
             
         </section>
     );
