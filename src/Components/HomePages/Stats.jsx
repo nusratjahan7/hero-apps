@@ -11,7 +11,7 @@ const stats = [
 
 const Stats = () => {
     return (
-        <section className="container mx-auto -mt-6 ">
+        <section className="container mx-auto -mt-6 px-3 ">
       <motion.div 
       initial={{opacity: 0, y: 30}}
       whileInView={{opacity: 1, y: 0}}
