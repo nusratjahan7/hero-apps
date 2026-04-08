@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { appsData } from "../../AppsData/AppsData";
 import { Download } from "lucide-react";
-import { FaStar } from "react-icons/fa";
+import { FaArrowRight, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion"
+import { HashLoader } from 'react-spinners';
+import { Link } from 'react-router';
 
 const topApps = [...appsData].sort((a, b) => b.downloads - a.downloads).slice(0, 8);
 
@@ -38,13 +40,19 @@ const TrendingApps = () => {
                 <h2 className='text-3xl font-bold'>Trending Apps</h2>
                 <p className='text-sm text-gray-600'>Explore All Trending Apps on the Market developed by us</p>
             </div>
+            <div className='flex justify-between mb-5'>
+                <h3 className='text-xl font-bold'>Top Apps</h3>
+                <Link to={'apps'}>
+                <button className='flex items-center gap-2 font-bold text-[#1a2980]'>View All <FaArrowRight /></button>
+                </Link>
+            </div>
             {/* top apps */}
             <div className='grid grid-cols-2 sm:grid-cols-3 gap-4 md:grid-cols-4'>
                 { 
                 loading ? 
                  (
             <div className="col-span-full flex justify-center items-center py-10">
-                <p className="text-gray-500 text-lg animate-pulse">Loading apps...</p>
+                <HashLoader color="#1a2980" />
             </div>
         )  :
                     (topApps.map((app, ind) => <motion.div 
@@ -71,7 +79,7 @@ const TrendingApps = () => {
                 <FaStar className="h-3.5 w-3.5 text-yellow-500" />
                      {app.ratingAvg}
                 </span>
-                 <span className="flex items-center gap-1 bg-green-300 py-1 px-2 rounded-full text-green-900 font-semibold">
+                 <span className="flex items-center gap-1 bg-green-300 py-1 px-2 rounded-full text-green-950 font-semibold">
                 <Download className="h-3.5 w-3.5" />
                     {app.downloads}
                  </span>
