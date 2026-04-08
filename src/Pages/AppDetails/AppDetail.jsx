@@ -4,6 +4,7 @@ import UseApps from '../../Hooks/UseApps';
 import { ArrowLeft, Download, MessageSquare } from 'lucide-react';
 import { FaStar } from 'react-icons/fa';
 import { HashLoader } from 'react-spinners';
+import AppNotFound from '../../Components/AppNotFound/AppNotFound';
 
 
 const AppDetail = () => {
@@ -21,7 +22,7 @@ const AppDetail = () => {
     }
 
     if (!expectedApp) {
-        return <p className="text-center text-3xl font-bold py-10">App not found</p>;
+        return <AppNotFound />
     }
 
 
